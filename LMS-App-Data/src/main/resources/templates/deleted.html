@@ -8,17 +8,11 @@
 	<a href="add">Add Employee</a> |
 	<a href="delete">Delete Employee</a> |
 	<a href="update">Update Employee</a>
-
-	<form action="deleting" method="post">
-		<table>
-			<tr>
-				<td>Employee Id:</td>
-				<td><input type="text" name="empId" /></td>
-			</tr>
-			<tr>
-				<td><input type="submit" value="Submit button" /></td>
-			</tr>
-		</table>
-	</form>
+<p> Congrats ! This employee record is deleted from database</p>
+	
+	Employee Id: <span th:text="${employee.empId}"></span><br/>
+	Employee Name: <span th:text="${employee.empName}"></span><br/>
+	Designation <span th:text="${employee.designation}"></span><br/>
+	
 </body>
 </html>

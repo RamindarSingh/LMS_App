@@ -31,10 +31,13 @@ public class EmployeeServices {
 		return true;
 	}
 	
-	public boolean deleteEmployee(String emplId){
+	public Employee deleteEmployee(String empId){
+
+		Employee employee = (Employee)database.getObjectbyId(Employee.class, empId);
 		
-		//Do database 
-		return true;
+		database.deleteObjectInDB(Employee.class, employee);
+		
+		return employee;
 	}
 	
 	public ArrayList<Employee> getAllEmployees(){

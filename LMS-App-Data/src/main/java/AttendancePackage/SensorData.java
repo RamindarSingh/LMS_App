@@ -1,4 +1,4 @@
-package AttendencePackage;
+package AttendancePackage;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -9,7 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Attendence {
+public class SensorData {
 	@Id
 	@GeneratedValue
 	@Column(name = "id", updatable = false, nullable = false)
@@ -51,7 +51,7 @@ public class Attendence {
 
 	private DateFormat outTime;
 	
-	public Attendence() {
+	public SensorData() {
 		inTime = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		outTime = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 

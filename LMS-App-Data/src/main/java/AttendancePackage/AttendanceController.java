@@ -10,10 +10,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class AttendanceController {
 
 	@Autowired
-	private SensorData sensorData;
+	private AttendanceServices attendanceServices;
+	
 	@RequestMapping(value="/SensorData", method=RequestMethod.POST)
 	public String pushSensorData(@ModelAttribute("sensorData") SensorData sensorData){
 		
+		attendanceServices.pushSensorData(sensorData);
 		return null;
 	}
 	

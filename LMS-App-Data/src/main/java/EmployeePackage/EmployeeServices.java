@@ -6,25 +6,22 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import LeavesPackage.Leaves;
+import Utility.DatabaseHandler;
 
 @Service
 public class EmployeeServices {
 	
+	@Autowired
+	private DatabaseHandler database;
 	
 	public boolean addEmployee(Employee employee){
 		
-		Configuration con = new Configuration().configure().addAnnotatedClass(Employee.class);
+		database.pushObjectInDB(Employee.class, employee);
 		
-		SessionFactory sf = con.buildSessionFactory();
-		
-		Session session = sf.openSession();
-		
-		Transaction tx = session.beginTransaction();
-		
-		session.save(employee);
-		
-		tx.commit();
 		return true;
 	}
 	

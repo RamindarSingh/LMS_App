@@ -17,22 +17,26 @@ public class EmployeeController {
 	
 	@RequestMapping("/")
 	public String homePage(){
-		return "homePage";
+		return "login";
 	}
+	
 	@RequestMapping("/add")
 	public String addEmployee(){
 		return "addEmployee";
 	}
 	
 	@RequestMapping(value="/submitted", method=RequestMethod.POST)
-	public String submitted(@ModelAttribute("employee") Employee employee){
+	public String submitted(@ModelAttribute("employee") Employee employee, Model model){
 		
-		if (employeeServices.addEmployee(employee)){
+		if (employeeServices.addEmployee(employee))
+		{
 			System.out.println("Congrats ! added");
-		} else
+			model.addAttribute("employee", employee);
+			return "addLeaves";
+		} 
+		else
 			System.out.println("Unable to add");
-		
-		return "homePage";
+			return "homePage";
 	}
 	
 	@RequestMapping("/delete")

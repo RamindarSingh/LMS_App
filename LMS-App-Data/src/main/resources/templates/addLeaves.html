@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+</head>
+<body>
+	<a href="/">Home</a> |
+	<a href="add">Add Employee</a> |
+	<a href="delete">Delete Employee</a> |
+	<a href="update">Update Employee</a>
+<table>
+			<tr>
+				<td>Name</td>
+				<td th:text="${employee.empName}"></td>
+			</tr>
+		
+			<tr>
+				<td>Id</td>
+				<td th:text="${employee.empId}"></td>
+			</tr>
+			</table>
+	<form action="submitLeaves" method="post">
+	<input type="text" name="empId" th:field="*{employee.empId}" readonly="readonly"/>
+	<!-- <label  th:field="*{employee.empId}"></label> -->
+		<table>	
+			<tr>
+				<td>Leaves:</td>
+				<td>Casual Leaves:
+					<select value="causal" name="causal">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+						<option>10</option>
+					</select>
+					Sick Leaves:
+					<select value="sick" name="sick">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+						<option>10</option>
+					</select>
+					Earned Leaves:
+					<select value="earned" name="earned">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+						<option>10</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Submit button" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
+
+
+

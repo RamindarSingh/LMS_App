@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+</head>
+<body>
+	<a href="/">Home</a> 
+	<form action="leaveSubmitted" method="post">
+	<table>
+		<tr>
+			<td>Name</td>
+			<td th:text="${employee.empName}"></td>
+		</tr>
+		
+		<tr>
+			<td>Id</td>
+			<td th:text="${employee.empId}"></td>
+		</tr>
+		
+		<tr>
+			<td>Supervisor</td>
+			<td th:text="${employee.supervisor}"></td>
+		</tr>
+		
+		<tr>			
+			<td>Designation</td>
+			<td th:text="${employee.designation}"></td>
+		</tr>
+		
+		<tr>
+			<td>Department</td>
+			<td th:text="${employee.department}"></td>
+		</tr>
+		
+		<tr>
+			<td>Start Date</td>
+			<td><input type="date" name="startDate" /></td>
+		</tr>
+			
+		<tr>
+			<td>End Date</td>
+			<td><input type="date" name="endDate" /></td>
+		</tr>
+		
+		<tr>
+			<td>Reason</td>
+			<td><input type="text" name="reason" /></td>
+		</tr>
+		
+		<tr>
+			<td>Type</td>
+			<td><input type="text" name="type" /></td>
+		</tr>
+		
+		<tr>
+			<td><input type="submit" value="Submit button" /></td>
+		</tr>
+		</table>
+	</form>
+</body>
+</html>
+
+
+

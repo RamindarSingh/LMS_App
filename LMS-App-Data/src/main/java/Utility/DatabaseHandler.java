@@ -1,5 +1,7 @@
 package Utility;
 
+import java.util.List;
+
 import javax.validation.ConstraintViolationException;
 
 import org.hibernate.HibernateException;
@@ -65,5 +67,11 @@ public class DatabaseHandler {
 		Session session = getDbSession(className);
 
 		return session.get(className, id);
+	}
+	
+	public List<Object> selectAll(Class<?> className){
+		
+		//className.getSimpleName()
+		return null;
 	}
 }

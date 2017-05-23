@@ -19,7 +19,6 @@ public class LeaveServices {
 	}
 	public Employee getEmployeeDetails(String empId) {
 
-		
 		Employee employee = (Employee) database.getObjectbyId(Employee.class, empId);
 		return employee;
 	}
